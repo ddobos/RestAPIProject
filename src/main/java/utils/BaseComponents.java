@@ -13,7 +13,8 @@ public class BaseComponents {
 	@BeforeClass
 	public void setup() {
 //		RestAssured.baseURI = "https://keytodorestapi.herokuapp.com/";
-		RestAssured.baseURI = "https://keytrcrud.herokuapp.com/";
+//		RestAssured.baseURI = "https://keytrcrud.herokuapp.com/";
+		RestAssured.baseURI = "https://api.instantwebtools.net/";
 	}
 	
 	public static Response doPostRequest(String path, String body, int statusCode) {
