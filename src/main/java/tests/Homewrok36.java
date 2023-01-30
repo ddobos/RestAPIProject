@@ -37,10 +37,10 @@ public class Homewrok36 extends BaseComponents {
 	@Test(priority = 3)
 	public void updatePassenger() {
 		String path = "v1/passenger/" + id;
-		Response response = doGetRequest(path, 200);
+//		Response response = doGetRequest(path, 200);
 		JSONObject body = DataBuilder.buildPassenger(300, 1, false);
 //		body.put("name", responseName);
-		response = doPutRequest(path, body.toJSONString(), 200);
+		Response response = doPutRequest(path, body.toJSONString(), 200);
 		assertThat("Passenger data put successfully completed.", is(equalTo(response.jsonPath().getString("message"))));
 	}
 	
@@ -54,7 +54,7 @@ public class Homewrok36 extends BaseComponents {
 		assertThat(responseName, is(equalTo(response.jsonPath().getString("name"))));
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void deletePassenger() {
 		String path = "v1/passenger/" + id;
 		Response response = doDeleterequest(path, 200);
