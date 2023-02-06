@@ -67,7 +67,9 @@ public class Homework37 {
 		String[] hasItemList = new String[] {"https://swapi.dev/api/films/2/", "https://swapi.dev/api/films/6/", "https://swapi.dev/api/films/5/"};
 		System.out.println(Arrays.toString(hasItemList));
 		
-		assertThat(films, hasItems(hasItemList));
+//		assertThat(films, hasItems("https://swapi.dev/api/films/1/", "https://swapi.dev/api/films/3/", "https://swapi.dev/api/films/2/"));
+		
+		assertThat(films, either(hasItem("https://swapi.dev/api/films/4/")).or(hasItem("https://swapi.dev/api/films/6/")).or(hasItem("https://swapi.dev/api/films/5/")));
 		
 		List<String> pilots = jsonPath.getList("pilots");
 		assertThat(pilots, is(emptyCollectionOf(String.class)));

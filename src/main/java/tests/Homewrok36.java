@@ -37,9 +37,8 @@ public class Homewrok36 extends BaseComponents {
 	@Test(priority = 3)
 	public void updatePassenger() {
 		String path = "v1/passenger/" + id;
-//		Response response = doGetRequest(path, 200);
 		JSONObject body = DataBuilder.buildPassenger(300, 1, false);
-//		body.put("name", responseName);
+		body.put("name", responseName);
 		Response response = doPutRequest(path, body.toJSONString(), 200);
 		assertThat("Passenger data put successfully completed.", is(equalTo(response.jsonPath().getString("message"))));
 	}
